@@ -171,7 +171,7 @@ paths:
                 BOOKING_ACTIVATED_WITH_DEVICE_RESPONSE:
                   $ref: "#/components/examples/BOOKING_ACTIVATED_WITH_DEVICE_RESPONSE"
                 BOOKING_UNAVAILABLE:
-                  $ref: "#/components/examples/BOOKING_UNAVAILABLE"
+                  $ref: "#/components/examples/BOOKING_TERMINATED"
         "400":
           $ref: "#/components/responses/CreateBooking400"
         "401":
