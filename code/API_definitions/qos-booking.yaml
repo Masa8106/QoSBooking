@@ -53,7 +53,7 @@ info:
 
     - If the subject can be identified from the access token and the optional `device` object is also included in the request, then the server will return an error with the `422 UNNECESSARY_IDENTIFIER` error code. This will be the case even if the same device is identified by these two methods, as the server is unable to make this comparison.
 
-    - If a request value is outside the valid range supported by the operator. Typical examples include a start time, or ports, then the server will return an error with the `400 OUT_OF_RANGE` error code. 
+    - If a request value is outside the valid range supported by the operator. Typical examples include a start time, or ports, then the server will return an error with the `400 OUT_OF_RANGE` error code.
 
     - If the requested booking duration is shorter than the minimum or longer than the maximum duration allowed for the selected `qosProfile`. then the server will return an error with the `400 QOS_BOOKING.DURATION_OUT_OF_RANGE` error code.
 
