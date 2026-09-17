@@ -980,6 +980,11 @@ components:
       value:
         qosProfile: "QOS_L"
         sink: "https://application-server.com/notifications"
+        sinkCredential:
+          credentialType: ACCESSTOKEN
+          accessToken: "eyJhbGciOiJIUzI1NiIsInR..."
+          accessTokenExpiresUtc: "2024-12-01T12:00:00Z"
+          accessTokenType: bearer
         device:
           ipv4Address:
             publicAddress: "203.0.113.0"
@@ -1002,6 +1007,11 @@ components:
       value:
         qosProfile: "Acme2"
         sink: "https://application-server.com/notifications"
+        sinkCredential:
+          credentialType: ACCESSTOKEN
+          accessToken: "eyJhbGciOiJIUzI1NiIsInR..."
+          accessTokenExpiresUtc: "2024-12-01T12:00:00Z"
+          accessTokenType: bearer
         startTime: "2024-06-01T12:00:00Z"
         duration: 2428
         serviceArea:
