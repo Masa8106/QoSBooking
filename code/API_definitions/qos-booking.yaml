@@ -51,14 +51,17 @@ info:
 
     - If the subject cannot be identified from the access token and the optional `device` object is not included in the request, then the server will return an error with the `422 MISSING_IDENTIFIER` error code.
 
-    - If the subject can be identified from the access token and the optional `device` object is also included in the request, then the server will return an error with the `422 UNNECESSARY_IDENTIFIER` error code.
+    - If the subject can be identified from the access token and the optional `device` object is also included in the request, then the server will return an error with the `422 UNNECESSARY_IDENTIFIER` error code. This will be the case even if the same device is identified by these two methods, as the server is unable to make this comparison.
 
     - If a request value is outside the valid range supported by the operator, typical examples include a start time or ports, then the server will return an error with the `400 OUT_OF_RANGE` error code.
 
     - If the requested booking duration is shorter than the minimum or longer than the maximum duration allowed for the selected `qosProfile`, then the server will return an error with the `400 QOS_BOOKING.DURATION_OUT_OF_RANGE` error code.
 
-    - If the requested area is syntactically valid but cannot be accepted for QoS booking by the operator, the server will return an appropriate error.
+    - If the request bookingId in getBookingById and deleteBooking operations does not exist in the current operator-managed resource, then the server will return an error with the `404 NOT_FOUND` error code.
 
+    - A QoS booking is a reservation for an App-flow between a specific device and a specific application server, a specific time window and, where relevant, a specific service area. An App-flow is expected to have at most one active booking at a time. If the client attempts to create a duplicate or overlapping booking for the same flow, then the server will return a `409 ALREADY_EXISTS` error code.
+
+    - If the requested area is syntactically valid but cannot be accepted for QoS booking by the operator, for example because it is outside the supported coverage, then the server will return an error with `422 QOS_BOOKING.INVALID_AREA` error code.
     <!-- CAMARA:MANDATORY:identifying-device-from-access-token:END -->
 
     - If the requested `qosProfile` exists but is currently not available for creating a booking, then the server will return an error with the `422 QOS_BOOKING.QOS_PROFILE_NOT_APPLICABLE` error code.
@@ -68,7 +71,9 @@ info:
 
     The list of error codes in this API specification is not exhaustive. Therefore the API specification MAY not document some non-mandatory error statuses as indicated in the CAMARA API Design Guide.
 
-    Please refer to the `CAMARA_common.yaml` of the Commonalities Release associated to this API version for a complete list of error responses. The applicable Commonalities Release can be identified from the `x-camara-commonalities` property.
+    Please refer to the `CAMARA_common.yaml` of the Commonalities Release associated to this API version for a complete list of error responses. The applicable Commonalities Release can be identified in the `API Readiness Checklist` document associated to this API version.
+
+    As a specific rule, error `501 - NOT_IMPLEMENTED` can be only a possible error response if it is explicitly documented in the API.
     <!-- CAMARA:MANDATORY:additional-error-responses:END -->
 
     <!-- CAMARA:MANDATORY:request-body-strictness:BEGIN -->
