@@ -70,7 +70,7 @@ info:
 
     Please refer to the `CAMARA_common.yaml` of the Commonalities Release associated to this API version for a complete list of error responses. The applicable Commonalities Release can be identified from the `x-camara-commonalities` property.
     <!-- CAMARA:MANDATORY:additional-error-responses:END -->
-    
+
     <!-- CAMARA:MANDATORY:request-body-strictness:BEGIN -->
     # Request body strictness
 
