@@ -136,7 +136,8 @@ paths:
             schema:
               $ref: "#/components/schemas/CreateBooking"
             examples:
-              $ref: '#/components/examples/EXAMPLE_CREATION_BODY'
+              EXAMPLE_CREATION_BODY:
+                $ref: '#/components/examples/EXAMPLE_CREATION_BODY'
         required: true
       callbacks:
         notifications:
@@ -997,7 +998,7 @@ components:
             latitude: 50.735851
             longitude: 7.10066
           radius: 100
-    
+
     BOOKING_ACTIVATED_WITH_DEVICE_RESPONSE:
       summary: QoS booking status is activated, with device included in response
       description: QoS booking info when booking status is activated, and request used a 2-legged access token with multiple device identifiers, or possibly only a single device identifier
