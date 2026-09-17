@@ -394,7 +394,6 @@ components:
         qosProfile:
           $ref: "#/components/schemas/QosProfileName"
         applicationServer:
-          description: If omitted, then all destinations from a specified device are assumed (as 0.0.0.0).
           $ref: "#/components/schemas/ApplicationServer"
         devicePorts:
           description: The ports used locally by the device for flows to which the requested QoS profile should apply. If omitted, then the qosProfile will apply to all flows between the device and the specified application server address and ports
@@ -704,7 +703,7 @@ components:
 
     ApplicationServer:
       description: |
-        A server hosting backend applications to deliver some business logic to clients.
+        A server hosting backend applications to deliver some business logic to clients. If omitted, then all destinations from a specified device are assumed (as 0.0.0.0 or 0:0:0:0:0:0:0:0).
 
         The developer can choose to provide the below specified device identifiers:
 
