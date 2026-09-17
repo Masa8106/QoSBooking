@@ -394,13 +394,14 @@ components:
         qosProfile:
           $ref: "#/components/schemas/QosProfileName"
         applicationServer:
+          description: If omitted, then all destinations from a specified device are assumed (as 0.0.0.0).
           $ref: "#/components/schemas/ApplicationServer"
         devicePorts:
           description: The ports used locally by the device for flows to which the requested QoS profile should apply. If omitted, then the qosProfile will apply to all flows between the device and the specified application server address and ports
           allOf:
             - $ref: "#/components/schemas/PortsSpec"
         applicationServerPorts:
-          description: A list of single ports or port ranges on the application server
+          description: A list of single ports or port ranges on the application server. If omitted, then all ports are considered to be included (as from 1 to 65536).
           allOf:
             - $ref: "#/components/schemas/PortsSpec"
         sink:
