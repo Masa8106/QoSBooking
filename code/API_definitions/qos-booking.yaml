@@ -506,6 +506,11 @@ components:
 
     SinkCredential:
       $ref: '../common/CAMARA_event_common.yaml#/components/schemas/SinkCredential'
+      example:
+        credentialType: ACCESSTOKEN
+        accessToken: "eyJhbGciOiJIUzI1NiIsInR..."
+        accessTokenExpiresUtc: "2024-12-01T12:00:00Z"
+        accessTokenType: bearer
 
     Port:
       $ref: '../common/CAMARA_common.yaml#/components/schemas/Port'
@@ -980,11 +985,6 @@ components:
       value:
         qosProfile: "QOS_L"
         sink: "https://application-server.com/notifications"
-        sinkCredential:
-          credentialType: ACCESSTOKEN
-          accessToken: "eyJhbGciOiJIUzI1NiIsInR..."
-          accessTokenExpiresUtc: "2024-12-01T12:00:00Z"
-          accessTokenType: bearer
         device:
           ipv4Address:
             publicAddress: "203.0.113.0"
@@ -1007,11 +1007,6 @@ components:
       value:
         qosProfile: "Acme2"
         sink: "https://application-server.com/notifications"
-        sinkCredential:
-          credentialType: ACCESSTOKEN
-          accessToken: "eyJhbGciOiJIUzI1NiIsInR..."
-          accessTokenExpiresUtc: "2024-12-01T12:00:00Z"
-          accessTokenType: bearer
         startTime: "2024-06-01T12:00:00Z"
         duration: 2428
         serviceArea:
